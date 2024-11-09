@@ -129,12 +129,23 @@ class homePage extends StatelessWidget {
               keyboardType: TextInputType.text,
               style: TextStyle(color: Colors.black),
               decoration: InputDecoration(
+                contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                   hintText: "Search places",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                     borderSide: BorderSide(color: Colors.grey)
                   ),
-                  suffixIcon: Icon(FluentIcons.filter_24_regular)),
+                  suffixIcon: Container(
+                    padding: EdgeInsets.only(right: 16),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(FluentIcons.divider_tall_24_regular,),
+                        SizedBox(width: 8,),
+                        Icon(FluentIcons.filter_24_regular,)
+                      ],
+                    ),
+                  )),
             ),
             SizedBox(
               height: 24,
