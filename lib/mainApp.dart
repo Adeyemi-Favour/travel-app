@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
-import 'package:travelapp/placeCards.dart';
-
 import 'filterButtons.dart';
 
 class mainApp extends StatelessWidget {
@@ -70,9 +68,6 @@ class homePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false, // Remove back button
-      ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: 'Home'),
@@ -81,8 +76,9 @@ class homePage extends StatelessWidget {
         ],
       ),
       body: ListView(
-          padding: EdgeInsets.symmetric(
-            horizontal: 16,
+
+          padding: EdgeInsets.only(
+            left: 16, right: 16, top: MediaQuery.of(context).size.height * 0.07
           ),
           children: [
             Row(
@@ -128,48 +124,20 @@ class homePage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
-              height: 38,
-            ),
-            Container(
-              padding: EdgeInsets.only(
-                left: 16,
-                right: 16,
-              ),
-              height: 58,
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(20)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Search places",
-                    style: TextStyle(color: Colors.grey),
+            SizedBox(height: 24,),
+            TextField(
+              keyboardType: TextInputType.text,
+              style: TextStyle(color: Colors.black),
+              decoration: InputDecoration(
+                  hintText: "Search places",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    borderSide: BorderSide(color: Colors.grey)
                   ),
-                  Row(
-                    children: [
-                      Icon(
-                        FluentIcons.divider_short_24_regular,
-                        color: Colors.grey,
-                        size: 35,
-                      ),
-                      SizedBox(
-                        width: 16,
-                      ),
-                      Icon(
-                        FluentIcons.filter_24_regular,
-                        color: Colors.grey,
-                        size: 35,
-                      )
-                    ],
-                  ),
-                ],
-              ),
+                  suffixIcon: Icon(FluentIcons.filter_24_regular)),
             ),
             SizedBox(
-              height: 38,
+              height: 24,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -205,6 +173,7 @@ class homePage extends StatelessWidget {
             SizedBox(
               height: 38,
             ),
+
             Stack(
               children: [
                 Container(
