@@ -222,14 +222,27 @@ class homePage extends StatelessWidget {
                         ),
                       ),
                       Positioned(
+                        right: 14,
+                        top: 14,
+                        child: Stack(alignment: Alignment.center,
+                          children: [
+                            Container(
+                              width: 50,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: Colors.black.withOpacity(0.4),
+                                borderRadius: BorderRadius.all(Radius.circular(50))
+                              ),
+                            ),
+                            Icon(FluentIcons.heart_24_regular, color: Colors.white,)
+                          ],
+                        ),
+                      ),
+                      Positioned(
                         width: 270,
                         bottom: 0,
-                        // // Adjust this value to place the overlay where you want
-                        // left: 16,
-                        // right: 16,
                         child: Container(
                           padding: EdgeInsets.all(16),
-
                           decoration: BoxDecoration(
                             color: Colors.black.withOpacity(0.7),
                             borderRadius: BorderRadius.all(Radius.circular(10)),
