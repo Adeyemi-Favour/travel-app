@@ -167,92 +167,117 @@ class homePage extends StatelessWidget {
             SizedBox(
               height: 16,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                filterButtons(
-                  placeCategory: "Most Viewed",
-                  buttonColor: Colors.black,
-                ),
-                filterButtons(
-                  placeCategory: "Nearby",
-                  buttonColor: Colors.grey,
-                ),
-                filterButtons(placeCategory: "Latest", buttonColor: Colors.grey)
-              ],
+            SizedBox(
+              height: 50,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                separatorBuilder: (context, index) => SizedBox(width: 8), // Horizontal spacing between items
+                itemCount: 3, // Number of filter buttons
+                itemBuilder: (context, index) {
+                  // Define button details based on index
+                  String placeCategory;
+                  Color buttonColor;
+
+                  if (index == 0) {
+                    placeCategory = "Most Viewed";
+                    buttonColor = Colors.black;
+                  } else if (index == 1) {
+                    placeCategory = "Nearby";
+                    buttonColor = Colors.grey;
+                  } else {
+                    placeCategory = "Latest";
+                    buttonColor = Colors.grey;
+                  }
+
+                  return filterButtons(
+                    placeCategory: placeCategory,
+                    buttonColor: buttonColor,
+                  );
+                },
+              ),
             ),
+
             SizedBox(
               height: 38,
             ),
 
-            Stack(
-              children: [
-                Container(
-                  width: 270,
-                  height: 405,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('lib/image168.png'),
-                      fit: BoxFit.cover,
-                    ),
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                  ),
-                ),
-                Positioned(
-                  width: 270,
-                  bottom: 0,
-                  // // Adjust this value to place the overlay where you want
-                  // left: 16,
-                  // right: 16,
-                  child: Container(
-                    padding: EdgeInsets.all(16),
-
-                    decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.7),
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              'Mount Fuji',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            SizedBox(width: 5),
-                            Text(
-                              'Tokyo',
-                              style: TextStyle(color: Colors.grey, fontSize: 14),
-                            ),
-                          ],
+            Container(
+              height: 405,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                  separatorBuilder: (context, index) => SizedBox(width: 20,),
+                  itemCount: 3,
+                itemBuilder: (context, index){
+                  return  Stack(
+                    children: [
+                      Container(
+                        width: 270,
+                        height: 405,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('lib/image168.png'),
+                            fit: BoxFit.cover,
+                          ),
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
                         ),
-                        SizedBox(height: 13,),
-                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Icon(FluentIcons.location_24_regular, color: Colors.grey,),
-                                SizedBox(width: 10,),
-                                Text('Tokyo, Japan', style: TextStyle(color: Colors.grey ),)
-                              ],),
-                            Row(
-                              children: [
-                                Icon(FluentIcons.star_24_regular, color: Colors.grey,),
-                                SizedBox(width: 5,),
-                                Text('4.8', style: TextStyle(color: Colors.grey ),)
-                              ],
-                            ),],
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ],
+                      ),
+                      Positioned(
+                        width: 270,
+                        bottom: 0,
+                        // // Adjust this value to place the overlay where you want
+                        // left: 16,
+                        // right: 16,
+                        child: Container(
+                          padding: EdgeInsets.all(16),
+
+                          decoration: BoxDecoration(
+                            color: Colors.black.withOpacity(0.7),
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    'Mount Fuji',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  SizedBox(width: 5),
+                                  Text(
+                                    'Tokyo',
+                                    style: TextStyle(color: Colors.grey, fontSize: 14),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 13,),
+                              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Icon(FluentIcons.location_24_regular, color: Colors.grey,),
+                                      SizedBox(width: 10,),
+                                      Text('Tokyo, Japan', style: TextStyle(color: Colors.grey ),)
+                                    ],),
+                                  Row(
+                                    children: [
+                                      Icon(FluentIcons.star_24_regular, color: Colors.grey,),
+                                      SizedBox(width: 5,),
+                                      Text('4.8', style: TextStyle(color: Colors.grey ),)
+                                    ],
+                                  ),],
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },),
             ),
           ]),
     );
