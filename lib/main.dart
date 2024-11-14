@@ -15,7 +15,10 @@ class travelApp extends StatelessWidget {
       title: "Travel App",
       theme: ThemeData(
           appBarTheme: AppBarTheme(centerTitle: true),
-          bottomNavigationBarTheme: BottomNavigationBarThemeData(),
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+            showSelectedLabels: false,
+            showUnselectedLabels: false
+          ),
           textTheme: TextTheme(
             bodyMedium: TextStyle(color: Colors.black),
           )),

@@ -77,10 +77,10 @@ packages:
     dependency: "direct main"
     description:
       name: fluentui_system_icons
-      sha256: a9fd6c4dc23016d15a224151848f575f8466aba0665b41cce8a2d157e72c9f36
+      sha256: f5eef03b53e1d3167677e968928090ddf191b20e8b512d5b403eb5275dd0285d
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.263"
+    version: "1.1.264"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -256,6 +256,15 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  sliding_clipped_nav_bar:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: c1d8e4b87fbfdcdea8355dcaa39344b7ceaad9eb
+      url: "https://github.com/watery-desert/sliding_clipped_nav_bar"
+    source: git
+    version: "3.1.1"
   source_span:
     dependency: transitive
     description:
