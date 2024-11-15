@@ -35,7 +35,6 @@ class homePage extends StatelessWidget {
         ],
       ),
       body: ListView(
-
           padding: EdgeInsets.only(
               left: 16, right: 16, top: MediaQuery.of(context).size.height * 0.07
           ),
