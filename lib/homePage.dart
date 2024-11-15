@@ -11,6 +11,8 @@ class homePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.grey.shade400,
         items: [
           BottomNavigationBarItem(
               icon: Column(
@@ -21,17 +23,20 @@ class homePage extends StatelessWidget {
                     height: 5,
                     decoration: BoxDecoration(
                         color: Colors.red,
-                        borderRadius: BorderRadius.all(Radius.circular(10),)
-                    ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        )),
                   )
                 ],
-              ), label: 'Home'
-          ),
+              ),
+              label: 'Home'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.access_time_rounded), label: 'History')
-          // BottomNavigationBarItem(icon: Icon(FluentIcons.home_24_filled), label: 'Home'),
-          // BottomNavigationBarItem(
-          //     icon: Icon(Icons.access_time_rounded), label: 'History')
+              icon: Icon(Icons.access_time_rounded), label: 'History'),
+          BottomNavigationBarItem(
+              icon: Icon(FluentIcons.heart_24_regular), label: 'Favorite'),
+          BottomNavigationBarItem(
+              icon: Icon(FluentIcons.person_24_regular),
+              label: 'Profile')
         ],
       ),
       body: ListView(
