@@ -228,7 +228,7 @@ class homePage extends StatelessWidget {
                                   SizedBox(width: 5),
                                   Text(
                                     'Tokyo',
-                                    style: TextStyle(color: Colors.grey, fontSize: 14),
+                                    style: TextStyle(color: Color(0xFFCAC8C8), fontSize: 14),
                                   ),
                                 ],
                               ),
@@ -237,15 +237,15 @@ class homePage extends StatelessWidget {
                                 children: [
                                   Row(
                                     children: [
-                                      Icon(FluentIcons.location_24_regular, color: Colors.grey,),
+                                      Icon(FluentIcons.location_24_regular, color: Color(0xFFCAC8C8),),
                                       SizedBox(width: 10,),
-                                      Text('Tokyo, Japan', style: TextStyle(color: Colors.grey ),)
+                                      Text('Tokyo, Japan', style: TextStyle(color: Color(0xFFCAC8C8) ),)
                                     ],),
                                   Row(
                                     children: [
-                                      Icon(FluentIcons.star_24_regular, color: Colors.grey,),
+                                      Icon(FluentIcons.star_24_regular, color: Color(0xFFCAC8C8),),
                                       SizedBox(width: 5,),
-                                      Text('4.8', style: TextStyle(color: Colors.grey ),)
+                                      Text('4.8', style: TextStyle(color: Color(0xFFCAC8C8) ),)
                                     ],
                                   ),],
                               )

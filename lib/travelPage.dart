@@ -39,13 +39,74 @@ class travelPage extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: (){
-                        
+                        Navigator.pop(context);
                       },
                       child: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white,),
                     )
                   ],
                 ),
               ),
+              Positioned(
+                right: 16,
+                top: 16,
+                child: Stack(alignment: Alignment.center,
+                  children: [
+                    Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                          color: Colors.black.withOpacity(0.4),
+                          borderRadius: BorderRadius.all(Radius.circular(50))
+                      ),
+                    ),
+                    Icon(Icons.bookmark_border_rounded, color: Colors.white,)
+                  ],
+                ),
+              ),
+              Positioned(
+                left: 16,
+                bottom: 16,
+                child: Container(
+                  width: 342,
+                  padding: EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: Colors.black.withOpacity(0.4),
+                    borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Andes Mountain',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w500
+                            ),
+                          ),
+                          Text(
+                            'Price',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,fontSize: 17,
+                                color: Color(0xFFCAC8C8)),
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Icon(FluentIcons.location_24_regular, color: Color(0xFFCAC8C8),),
+                          SizedBox(width: 6,),
+                          Text('South, America', style: TextStyle(
+                            color: Color(0xFFCAC8C8), fontSize: 17, fontWeight: FontWeight.w400
+                          ),)
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              )
             ],
           )
         ],
