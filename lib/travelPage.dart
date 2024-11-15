@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -148,26 +150,131 @@ class travelPage extends StatelessWidget {
             ),
           Padding(
             padding: const EdgeInsets.only(top: 20.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
+            child: Column(
               children: [
-                Text(
-                  'Overview',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w500,
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Overview',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 32,
+                    ),
+                    Text(
+                      'Details',
+                      style: TextStyle(
+                          color: Color(0xFF1B1B1B),
+                          fontWeight: FontWeight.w400,
+                          fontSize: 17),
+                    )
+                  ],
+                ),
+                SizedBox(height: 16,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          width: 34,
+                          height: 34,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(10),),
+                            color: Colors.grey.shade300
+                          ),
+                          child: Icon(FluentIcons.clock_24_filled),
+                        ),
+                        SizedBox(width: 6,),
+                        Text(
+                          '8 hours',
+                          style: TextStyle(
+                            color: Color(0xFF1B1B1B),
+                            fontSize: 17,
+                            fontWeight: FontWeight.w400
+                          ),
+                        )
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          width: 34,
+                          height: 34,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(10),),
+                              color: Colors.grey.shade300
+                          ),
+                          child: Icon(FluentIcons.cloud_24_filled),
+                        ),
+                        SizedBox(width: 6,),
+                        Text(
+                          '16℃',
+                          style: TextStyle(
+                              color: Color(0xFF1B1B1B),
+                              fontSize: 17,
+                              fontWeight: FontWeight.w400
+                          ),
+                        )
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          width: 34,
+                          height: 34,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(10),),
+                              color: Colors.grey.shade300
+                          ),
+                          child: Icon(FluentIcons.star_24_filled),
+                        ),
+                        SizedBox(width: 6,),
+                        Text(
+                          '4.5',
+                          style: TextStyle(
+                              color: Color(0xFF1B1B1B),
+                              fontSize: 17,
+                              fontWeight: FontWeight.w400
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                SizedBox(height: 16,),
+                Container(
+                    child: Text(
+                  'This vast mountain range is renowned for its remarkable diversity in terms of topography and climate. It features towering peaks, active volcanoes, deep canyons, expansive plateaus, and lush valleys. The Andes are also home to ',
+                  style: TextStyle(fontSize: 17),
+                )),
+                SizedBox(height: 16,),
+                ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStateProperty.all(Colors.black),
+                    padding: WidgetStateProperty.all(EdgeInsets.all(20))
+                  ),
+                  onPressed: null,
+                  child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Book Now',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(width: 20,),
+                      Icon(FluentIcons.send_24_regular, color: Colors.white,)
+                    ],
                   ),
                 ),
-                SizedBox(
-                  width: 32,
-                ),
-                Text(
-                  'Details',
-                  style: TextStyle(
-                      color: Color(0xFF1B1B1B),
-                      fontWeight: FontWeight.w400,
-                      fontSize: 17),
-                )
+                SizedBox(height: 16,),
               ],
             ),
           )
